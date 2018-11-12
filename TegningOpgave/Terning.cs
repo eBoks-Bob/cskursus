@@ -32,7 +32,7 @@ namespace TegningOpgave
 
         public void Ryst()
         {
-            if (this.snyd == true)
+            if (snyd)
                 this.værdi = 6;
             else
                 this.værdi = rnd.Next(1,7);
