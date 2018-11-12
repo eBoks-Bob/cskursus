@@ -29,12 +29,15 @@ namespace NullAbleOpgave
 
         static bool? HentFraDb(int tal)
         {
-            if (tal == 1)
-                return (true);
-            else if (tal == 2)
-                return (false);
-            else
-                return (null);
+            switch (tal)
+            {
+                case 1:
+                    return (true);
+                case 2:
+                    return (false);
+                default:
+                    return (null);
+            }
         }
     }
 }
