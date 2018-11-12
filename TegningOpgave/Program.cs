@@ -20,6 +20,10 @@ namespace TegningOpgave
             t2.Ryst();
             t2.Skriv();
 
+            Terning t3 = new Terning();
+            t3.værdi = 4;
+            t3.Skriv();
+            
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 Console.Write("Press any key to continue . . .");
