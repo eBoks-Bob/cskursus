@@ -22,16 +22,12 @@ namespace TerningArvOpgave
 
             LudoTerning l1 = new LudoTerning();
             l1.Skriv();
-            Console.WriteLine(l1.ErStjerne());  
-
+            
             LudoTerning l2 = new LudoTerning(5);
             l2.Skriv();
-            Console.WriteLine(l1.ErGlobus());
-
+            
             l2.Ryst();
-            l2.Skriv();
-            Console.WriteLine(l2.ErStjerne());
-
+            l2.Skriv();      
 
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -56,7 +52,7 @@ namespace TerningArvOpgave
                 }
             }
 
-            public void Skriv()
+            public virtual void Skriv()
             {
                 Console.WriteLine("["+this.Værdi+"]");
             } 
@@ -95,6 +91,17 @@ namespace TerningArvOpgave
             public bool ErStjerne()
             {
                 return this.Værdi == 5;
+            }
+
+            public override void Skriv()
+            {
+                if (this.ErStjerne())
+                    Console.WriteLine("[S]");
+                else
+                if (this.ErGlobus())
+                    Console.WriteLine("[G]");
+                else
+                    base.Skriv();
             }
         }
     }

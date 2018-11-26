@@ -10,8 +10,22 @@ namespace EgetInterface
     {
         static void Main(string[] args)
         {
-            List<IDbFunktioner> lst = new List<IDbFunktioner>();
+            IDbFunktioner[] array = new IDbFunktioner[4];
+            array[0] = new Hund();
+            array[1] = new Ubåd();
+            array[2] = new Hund();
+            array[3] = new Ubåd();
 
+            foreach (var item in array)
+            {
+                item.Gem();
+            }
+
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                Console.Write("Press any key to continue . . .");
+                Console.ReadKey();
+            }
         }
     }
 
@@ -21,7 +35,7 @@ namespace EgetInterface
 
         public void Gem()
         {
-            Console.WriteLine("Gemmer Hund"); 
+            Console.WriteLine("Gemmer hund..."); 
         }
     }
 
@@ -32,7 +46,7 @@ namespace EgetInterface
 
         public void Gem()
         {
-            Console.WriteLine("Gemmer Ubåd");
+            Console.WriteLine("Gemmer ubåd...");
         }
     }
 
